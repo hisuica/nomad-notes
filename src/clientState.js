@@ -7,7 +7,7 @@ export const defaults = {
       __typename: "Note",
       id: 1,
       title: "First",
-      content: "Second"
+      content: "- Second"
     }
   ]
 };
@@ -23,7 +23,7 @@ export const typeDefs = [
   }
   type Mutation {
     createNote(title: String!, content: String!)
-    editNote(id: String!, title: String!, content: String)
+    editNote(id: String!, title: String, content: String)
   }
   type Note{
     id: Int!
