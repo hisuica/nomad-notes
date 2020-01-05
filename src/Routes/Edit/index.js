@@ -1,2 +1,2 @@
-import Edit from "./Note.js";
+import Edit from "./Edit.js";
 export default Edit;
