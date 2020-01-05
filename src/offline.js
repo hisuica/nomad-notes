@@ -1,4 +1,4 @@
-import { GET_NOTES } from "./queries";
+import {GET_NOTES} from "./queries";
 
 export const saveNotes = (cache) => {
   const { notes } = cache.readQuery({ query: GET_NOTES });
@@ -8,4 +8,17 @@ export const saveNotes = (cache) => {
   } catch(error) {
     console.log(error)
   }
+};
+
+export const restoreNotes = () => {
+  const notes = localStorage.getItem("notes");
+  if (notes) {
+    try{
+      return JSON.parse(notes);
+    } catch(error) {
+      console.log(error);
+      return [];
+    }
+  }
+  return [];
 };
